@@ -1,0 +1,39 @@
+@import "./lib/open-color.scss";
+
+$white: #fff;
+$black: rgb(20, 23, 26);
+$main-color: rgb(255, 151, 26);
+$main-deep: rgb(255, 139, 0);
+$sub-color: $oc-violet-5;
+
+// 변수
+$body-bg: $white;
+$footer-background: #727071;
+
+$content-max-width: 900px;
+$fullsize-min-width: 1920px;
+
+$default-font-size: 15px;
+$tablet-font-size: 14px;
+$mobile-font-size: 13px;
+
+$default-border-color: rgba(0, 0, 0, 0.05);
+
+$mobile-footer-height: 70px;
+
+$on-black-op-text: rgba(255, 255, 255, 0.33);
+$on-white-op-text: rgba(128, 128, 128, 0.5);
+
+$vector: (
+   t: top,
+   r: right,
+   b: bottom,
+   l: left,
+);
+$device-name: (m, t, d);
+$device-size: (0px, 540px, 960px, 65535px);
+
+// 글자 쉐도우
+$ws: rgba(255, 255, 255, 0.75);
+$bs: rgba(0, 0, 0, 0.75);
+$header-box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);

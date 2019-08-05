@@ -1,0 +1,33 @@
+html {
+   font-size: $default-font-size;
+   @include device-mobile() {
+      font-size: $mobile-font-size;
+   }
+   @include device-tablet() {
+      font-size: $tablet-font-size;
+   }
+   body {
+      font-size: 1rem;
+      color: $oc-gray-9;
+      //  background: linear-gradient(-135deg, $body-bg, darken($body-bg, 7));
+      background: $body-bg;
+      color: $black;
+      font-family: "Noto Sans KR", sans-serif !important;
+      letter-spacing: -0.56px;
+   }
+
+   .pointer {
+      cursor: pointer;
+   }
+
+   [seal] {
+      box-sizing: border-box;
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      width: 100%;
+      height: 100%;
+      background: none;
+      z-index: 2;
+   }
+}

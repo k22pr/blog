@@ -1,0 +1,28 @@
+article.page {
+   width: $content-max-width;
+   margin: 0px auto;
+   padding: 1rem;
+   .page-header {
+      margin: 1rem 0rem;
+      .title {
+         font-size: 1.8rem;
+         padding-bottom: 5px;
+         border-bottom: 1px solid #ccc;
+
+         i {
+            color: $main-color;
+         }
+      }
+   }
+
+   .non-block {
+      background: $oc-gray-3;
+      border: 1px solid $oc-gray-4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3rem;
+      color: $oc-gray-0;
+      margin-bottom: 1rem;
+   }
+}

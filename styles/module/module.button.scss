@@ -1,0 +1,90 @@
+@mixin button-color($color: $main-color, $border-color: $color, $percent: 10%) {
+   background: $color;
+   border: 1px solid $border-color;
+   &:hover {
+      background: lighten($color, $percent);
+   }
+   &:active {
+      background: darken($color, $percent);
+   }
+}
+body {
+   button,
+   .button {
+      display: inline-block;
+      cursor: pointer;
+      background: $main-color;
+      border: 1px solid $main-color;
+      color: #fff;
+      // border-radius: 3px;
+      padding: 0.5rem 2rem;
+      transition: background 0.3s;
+      outline: none;
+      &[disabled],
+      &.disabled,
+      &[read-only],
+      &.read-only {
+         cursor: not-allowed;
+         border: 1px solid #999;
+         background: #999;
+         color: #ddd;
+         &:hover {
+            background: #999;
+            color: #ddd;
+         }
+      }
+      &:focus {
+         outline: 0;
+      }
+      &:hover {
+         background: lighten($main-color, 10%);
+      }
+      &:active {
+         transition: 0.1s;
+         background: darken($main-color, 10%);
+      }
+
+      &.close {
+         &:hover {
+            background: none;
+         }
+         &:focus {
+            background: none;
+         }
+         &:active {
+            background: none;
+         }
+      }
+      &.small {
+         padding: 0.4rem 1.8rem;
+         font-size: 12px;
+      }
+      &.medium {
+         padding: 1rem 2.5rem;
+         font-size: 16px;
+      }
+      &.large {
+         padding: 1rem 2.5rem;
+         font-size: 21px;
+      }
+
+      &.sub {
+         @include button-color(#8c9c88);
+      }
+      &.orange {
+         @include button-color(#d6a156);
+      }
+      &.green {
+         @include button-color(#8c9c88);
+      }
+      &.green-deep {
+         @include button-color(#588681);
+      }
+      &.dark {
+         @include button-color(#626262);
+      }
+      &.gray {
+         @include button-color(#8d8d8d);
+      }
+   }
+}

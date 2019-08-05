@@ -1,0 +1,68 @@
+@import "../variable.scss";
+
+.flex,
+[flex] {
+   display: flex;
+   flex-wrap: wrap;
+   @for $max from 1 through 12 {
+      > [row="#{$max}"] {
+         flex: $max 0 auto;
+      }
+   }
+   // @for $d from 1 through length($device-name) {
+   //    @media (min-width: nth($device-size,$d)) and (max-width: nth($device-size,$d+1) + 1px) {
+   //       @for $max from 1 through 12 {
+   //          > [row="#{$max}"] {
+   //             flex: $max 0 auto;
+   //          }
+   //       }
+   //    }
+   // }
+
+   &[f-dir="column"],
+   &[fdc] {
+      flex-direction: column;
+   }
+   &[f-dir="row"],
+   &[fdr] {
+      flex-direction: row;
+   }
+
+   &[f-jus="start"],
+   &[fjs] {
+      justify-content: flex-start;
+   }
+   &[f-jus="end"],
+   &[fje] {
+      justify-content: flex-end;
+   }
+   &[f-jus="center"],
+   &[fjc] {
+      justify-content: center;
+   }
+   &[f-jus="between"],
+   &[fjb] {
+      justify-content: space-between;
+   }
+
+   &[f-items="start"],
+   &[fis] {
+      align-items: flex-start;
+   }
+   &[f-items="end"],
+   &[fie] {
+      align-items: flex-end;
+   }
+   &[f-items="center"],
+   &[fic] {
+      align-items: center;
+   }
+   &[f-items="base"],
+   &[fib] {
+      align-items: baseline;
+   }
+   &[f-items="stretch"],
+   &[fist] {
+      align-items: stretch;
+   }
+}

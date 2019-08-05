@@ -1,0 +1,29 @@
+$skeleton-color: rgba(225, 225, 225, 0.2);
+
+.ant-skeleton-header .ant-skeleton-avatar {
+   background: $skeleton-color;
+}
+.ant-skeleton-content {
+   .ant-skeleton-title {
+      background: $skeleton-color;
+   }
+   .ant-skeleton-paragraph > li {
+      background: $skeleton-color;
+   }
+}
+
+.ant-skeleton.ant-skeleton-active {
+   .ant-skeleton-avatar {
+      animation: ant-skeleton-loading 1.4s ease infinite;
+      background-size: 400% 100%;
+      // background: linear-gradient(90deg, $skeleton-color 25%, darken($skeleton-color, 10) 37%, $skeleton-color 63%);
+   }
+   .ant-skeleton-content {
+      .ant-skeleton-title,
+      .ant-skeleton-paragraph > li {
+         animation: ant-skeleton-loading 1.4s ease infinite;
+         background-size: 400% 100%;
+         // background: linear-gradient(90deg, rgb(245, 245, 245) 25%, darken(rgb(245, 245, 245), 10) 37%, rgb(245, 245, 245) 63%);
+      }
+   }
+}
