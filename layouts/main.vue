@@ -1,25 +1,27 @@
 <template>
   <div>
-    <default-header />
-    <nuxt />
-    <default-footer />
+    <default-side />
+    <nuxt class="main-layout" />
   </div>
 </template>
 
 <script lang="ts">
   import { Component, Prop, Vue } from "vue-property-decorator";
 
-  import DefaultHeader from "~/components/shared/Header.vue";
-  import DefaultFooter from "~/components/shared/Footer.vue";
+  import DefaultSide from "~/components/main/Side.vue";
 
   @Component({
     components: {
-      DefaultHeader,
-      DefaultFooter
+      DefaultSide
     }
   })
   export default class ComponentName extends Vue {}
 </script>
 
-<style scoped>
+<style lang="scss">
+  html {
+    body {
+      background: #e9ecef;
+    }
+  }
 </style>

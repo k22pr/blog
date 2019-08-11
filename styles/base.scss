@@ -6,7 +6,12 @@ html {
    @include device-tablet() {
       font-size: $tablet-font-size;
    }
+   div{
+      box-sizing: border-box;
+   }
    body {
+      margin:0px;
+      padding:0px;
       font-size: 1rem;
       color: $oc-gray-9;
       //  background: linear-gradient(-135deg, $body-bg, darken($body-bg, 7));
