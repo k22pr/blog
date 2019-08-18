@@ -1,7 +1,10 @@
 <template>
-  <section>
-    <h1 class="header">Nuxt TypeScript Starter</h1>
-    <div class="cards"></div>
+  <section flex fjc fic>
+    <div class="login-page">
+      <button flex fjc class="black medium">
+        <i class="fab fa-github b2 pr10"></i> login with github
+      </button>
+    </div>
   </section>
 </template>
 
@@ -21,3 +24,5 @@
     @State people!: Person;
   }
 </script>
+
+<style lang="scss" scopped src="~/styles/component/main/index.scss" />

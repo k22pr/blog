@@ -16,7 +16,7 @@ export default {
       ]
    },
    loading: { color: "#3B8070" },
-   css: ["~/assets/css/main.css", "~/styles/index.css"],
+   css: ["ant-design-vue/dist/antd.css","~/assets/css/main.css", "~/styles/index.css"],
    build: {},
    modules: [
       "@nuxtjs/axios",
