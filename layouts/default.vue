@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="page default">
     <default-header />
     <nuxt />
     <default-footer />
@@ -20,6 +20,3 @@
   })
   export default class ComponentName extends Vue {}
 </script>
-
-<style scoped>
-</style>

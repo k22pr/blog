@@ -9,5 +9,9 @@ section {
       padding: 10px;
       border-radius: 3px;
       @include box-shadow(60px);
+      i {
+         font-size: 2rem;
+         padding-right: 10px;
+      }
    }
 }

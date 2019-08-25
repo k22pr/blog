@@ -1,5 +1,5 @@
 <template>
-  <div>post {{ index }}</div>
+  <div class="content-container">post {{ index }}</div>
 </template>
 
 <script lang="ts">
@@ -15,5 +15,4 @@
   }
 </script>
 
-<style scoped>
-</style>
+<style scoped lang="scss" src="~/styles/component/shared/footer.scss" />

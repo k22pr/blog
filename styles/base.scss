@@ -22,8 +22,15 @@ html {
       //  background: linear-gradient(-135deg, $body-bg, darken($body-bg, 7));
       background: $body-bg;
       color: $black;
-      font-family: "Spoqa Han Sans", "Spoqa Han Sans JP", "Noto Sans KR", sans-serif !important;
+      font-family: "Quicksand", "Spoqa Han Sans", "Spoqa Han Sans JP", "Noto Sans KR", sans-serif !important;
       letter-spacing: -0.56px;
+      .page {
+         width: 100vw;
+         height: 100vh;
+         &.default {
+            background: #fff;
+         }
+      }
    }
 
    .pointer {
