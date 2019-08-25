@@ -27,4 +27,4 @@ export default class extends Vue {
 }
 </script>
 
-<style lang="scss" scopped src="~/styles/component/main/index.scss" />
+<style lang="scss" scopped src="~/styles/page/login.scss" />
