@@ -16,6 +16,18 @@ gulp.task("scss", function() {
    });
 });
 
+gulp.task("scss:ie9", function() {
+   return new Promise((resolve) => {
+      gulp
+         .src("./styles/ie.scss")
+         .pipe(fileCache.filter())
+         .pipe(scss({ outputStyle: "compressed" }).on("error", scss.logError))
+         .pipe(fileCache.cache())
+         .pipe(gulp.dest("./styles"));
+      resolve();
+   });
+});
+
 gulp.task("scss:component", function() {
    return new Promise((resolve) => {
       gulp
@@ -23,7 +35,7 @@ gulp.task("scss:component", function() {
          .pipe(fileCache.filter())
          .pipe(scss({ outputStyle: "compressed" }).on("error", scss.logError))
          .pipe(fileCache.cache())
-         .pipe(gulp.dest("./styles/component/"));
+         .pipe(gulp.dest("./styles"));
       resolve();
    });
 });
@@ -32,5 +44,6 @@ gulp.task("watch", function() {
    gulp.watch("./styles/*.scss", gulp.series("scss"));
    gulp.watch("./styles/module/*.scss", gulp.series("scss"));
    gulp.watch("./styles/shared/*.scss", gulp.series("scss"));
-   gulp.watch("./styles/component/**/*.scss", gulp.series("scss:component"));
+   gulp.watch("./styles/ie.scss", gulp.series("scss:ie9"));
+   // gulp.watch("./styles/component/**/*.scss", gulp.series("scss:component"));
 });

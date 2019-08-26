@@ -15,6 +15,7 @@ body {
       cursor: pointer;
       background: $main-color;
       border: 1px solid $main-color;
+      border-radius: 3px;
       color: #fff;
       // border-radius: 3px;
       padding: 0.5rem 2rem;
@@ -61,7 +62,7 @@ body {
       }
       &.medium {
          padding: 1rem 2.5rem;
-         font-size: 16px;
+         font-size: 18px;
       }
       &.large {
          padding: 1rem 2.5rem;
@@ -85,6 +86,9 @@ body {
       }
       &.gray {
          @include button-color(#8d8d8d);
+      }
+      &.black {
+         @include button-color(#333);
       }
    }
 }

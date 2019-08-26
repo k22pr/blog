@@ -1,0 +1,11 @@
+@import "../../import.scss";
+
+header {
+   min-height: 60px;
+   padding: 0px 1rem;
+   // @include box-shadow(30px,0.05);
+
+   .home {
+      font-size: 1.5rem;
+   }
+}
