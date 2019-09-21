@@ -31,6 +31,15 @@ html {
             background: #fff;
          }
       }
+
+      .fira {
+         font-family: "Fira Code", "TypoPRO Fira Code", "Quicksand", sans-serif !important;
+      }
+   }
+
+   code,
+   pre {
+      line-height: 1.35;
    }
 
    .pointer {

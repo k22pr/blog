@@ -1,10 +1,7 @@
-import { RootState, Person } from "~/types";
+import { RootState } from "~/types/state";
 import { MutationTree, ActionTree } from "vuex";
-import localRandomData from "~/static/random-data.json";
 
-export const state = (): RootState => ({
-   people: [],
-});
+export const state = (): RootState => ({});
 
 export const mutations: MutationTree<RootState> = {};
 
