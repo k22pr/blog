@@ -1,4 +1,4 @@
-export interface IIamge {
+export interface IImage {
   id: number;
   created_at: string;
   ext: string;
@@ -18,8 +18,8 @@ export interface IPost {
   category: any;
   title: string;
   content: string;
-  logo: IIamge;
-  banner: IIamge;
+  logo: IImage;
+  banner: IImage;
   created_at: string;
   updated_at: string;
   is_deleted: boolean;

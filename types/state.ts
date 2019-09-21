@@ -4,9 +4,9 @@ import { IPost, IImage } from "./post";
 export interface RootState {}
 
 export interface CategoryState {
-   categorys: ICategory[];
+  categorys: ICategory[];
 }
 
 export interface PostState {
-   bannerUrl: string;
+  bannerUrl: string;
 }

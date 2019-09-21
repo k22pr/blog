@@ -1,63 +1,63 @@
 @import "../import.scss";
 
 section {
-   .header {
-      z-index: 0;
+  .header {
+    z-index: 0;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 66vh;
+    background: $oc-gray-1;
+    overflow: hidden;
+    img {
+      position: absolute;
+      width: 100%;
+      left: 50%;
+      transform: translate(-50%, 0%);
+      min-width: $content-max-width;
+    }
+    .blur {
       position: absolute;
       top: 0px;
       left: 0px;
       width: 100%;
-      height: 66vh;
-      background: $oc-gray-1;
-      overflow: hidden;
-      img {
-         position: absolute;
-         width: 100%;
-         left: 50%;
-         transform: translate(-50%, 0%);
-         min-width: $content-max-width;
-      }
-      .blur {
-         position: absolute;
-         top: 0px;
-         left: 0px;
-         width: 100%;
-         height: 100%;
-         background: rgba(32, 36, 40, 0.5);
-      }
-   }
-   article {
-      position: relative;
-      z-index: 1;
-      background: #fff;
-      margin: 0px auto;
-      border-top-left-radius: 3px;
-      border-top-right-radius: 3px;
-      @include device-desktop() {
-         margin-top: 33vh;
-         min-height: 67vh;
-         width: $content-max-width;
-      }
-      @include device-lte-tablet() {
-         margin-top: 10vh;
-         min-height: 90vh;
-         width: 100%;
-      }
+      height: 100%;
+      background: rgba(32, 36, 40, 0.5);
+    }
+  }
+  article {
+    position: relative;
+    z-index: 1;
+    background: #fff;
+    margin: 0px auto;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    @include device-desktop() {
+      margin-top: 33vh;
+      min-height: 67vh;
+      width: $content-max-width;
+    }
+    @include device-lte-tablet() {
+      margin-top: 30vh;
+      min-height: 70vh;
+      width: 100%;
+    }
 
-      .post-title {
-         font-size: 2rem;
-         padding: 2rem;
-         padding-bottom: 1rem;
-         border-bottom: 1px solid $oc-gray-1;
-         margin-bottom: 1rem;
-         i {
-            color: $oc-gray-5;
-         }
+    .post-title {
+      font-size: 2rem;
+      padding: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid $oc-gray-1;
+      margin-bottom: 1rem;
+      i {
+        color: $oc-gray-5;
       }
-      .content {
-         width: 100%;
-         padding: 2rem;
-         line-height: 1.7;
-      }
-   }
+    }
+    .content {
+      width: 100%;
+      padding: 2rem;
+      line-height: 1.7;
+    }
+  }
 }
