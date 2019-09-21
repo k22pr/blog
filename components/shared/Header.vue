@@ -1,14 +1,14 @@
 <template>
   <header flex fic class="w12">
-    <div class="home">HEADER</div>
+    <nuxt-link to="/" class="home">SubLOG</nuxt-link>
   </header>
 </template>
 
 <script lang="ts">
-  import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
-  @Component
-  export default class ComponentName extends Vue {}
+@Component
+export default class ComponentName extends Vue {}
 </script>
 
 <style scoped lang="scss" src="~/styles/component/shared/header.scss" />

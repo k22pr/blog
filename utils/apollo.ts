@@ -6,15 +6,15 @@ import fetch from "node-fetch";
 import Config from "../config";
 
 export default new ApolloClient({
-   link: new HttpLink({
-      uri: `http://${Config.serverUrl}:${Config.serverPort}/graphql`,
-      fetch: fetch,
-   }),
-   cache: new InMemoryCache(),
-   //  defaultOptions: {
-   //     query: {
-   //        fetchPolicy: "no-cache",
-   //        errorPolicy: "all",
-   //     },
-   //  },
+  link: new HttpLink({
+    uri: `http://${Config.serverUrl}:${Config.serverPort}/graphql`,
+    fetch: fetch,
+  }),
+  cache: new InMemoryCache(),
+  //  defaultOptions: {
+  //     query: {
+  //        fetchPolicy: "no-cache",
+  //        errorPolicy: "all",
+  //     },
+  //  },
 });
