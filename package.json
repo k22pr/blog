@@ -29,7 +29,9 @@
       "vue-code-highlight": "^0.7.2",
       "vue-markdown": "^2.2.4",
       "vue-prism": "^1.0.5",
-      "vuex-class": "0.3.2"
+      "vue-prism-component": "^1.1.1",
+      "vuex-class": "0.3.2",
+      "vuex-module-decorators": "^0.10.1"
    },
    "scripts": {
       "dev": "nuxt -p 3333",

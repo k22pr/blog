@@ -9,5 +9,5 @@ export default {
   loading: { color: "#3B8070" },
   css: ["ant-design-vue/dist/antd.css", "~/assets/css/main.css", "~/styles/index.css"],
   build: {},
-  plugins: ["~/plugins/axios.ts", "~/plugins/antd.ts"],
+  plugins: ["~/plugins/axios.ts", "~/plugins/antd.ts", { src: "~/plugins/prism.ts", ssr: false }],
 };

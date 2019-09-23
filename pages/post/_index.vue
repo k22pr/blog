@@ -1,7 +1,5 @@
 <template>
   <section>
-    <script rel="preload" src="/prism.js"></script>
-    <script rel="preload" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/plugins/autoloader/prism-autoloader.min.js"></script>
     <div class="header">
       <img v-if="postData" :src="`http://localhost:1337${postData.banner.url}`" />
       <div class="blur"></div>
@@ -31,10 +29,10 @@ const VueMarkdown = require("vue-markdown").default;
 import { IImage, IPost } from "~/types/post";
 import { IGetPost } from "~/types/graphQL";
 
-import VuePrism from "vue-prism";
+// import VuePrism from "vue-prism";
 // const VuePrism = require("vue-prism");
-Vue.use(VuePrism);
-require("~/static/prism.css");
+// Vue.use(VuePrism);
+// require("~/static/prism.css");
 
 // const Prism = require("prismjs");
 // const Loader = require("prism-loader");
@@ -74,7 +72,7 @@ export default class PostView extends Vue {
       // while ((match = findCodeReg.exec(content)) != null) {
       //   console.log(match);
       //   var replace = new RegExp(match[0], "gmi");
-      //   content.replace(replace, Prism.highlight(match[0], Prism.languages[match[1]], Prism.languages[match[1]]));
+      // content.replace(replace, Prism.highlight(match[0], Prism.languages[match[1]], Prism.languages[match[1]]));
       //   console.log(content);
       // }
 

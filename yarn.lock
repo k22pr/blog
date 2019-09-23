@@ -9856,6 +9856,10 @@ vue-no-ssr@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/vue-no-ssr/-/vue-no-ssr-1.1.1.tgz#875f3be6fb0ae41568a837f3ac1a80eaa137b998"
 
+vue-prism-component@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/vue-prism-component/-/vue-prism-component-1.1.1.tgz#df0e375f7f9b367b069b2d54e6ed86facde96030"
+
 vue-prism@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/vue-prism/-/vue-prism-1.0.5.tgz#6e7777adb2fa11c0a8cb99e0265112a105549550"
@@ -9915,6 +9919,10 @@ vue@^2.5.16, vue@^2.6.10, vue@^2.6.6:
 vuex-class@0.3.2, vuex-class@^0.3.2:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/vuex-class/-/vuex-class-0.3.2.tgz#c7e96a076c1682137d4d23a8dcfdc63f220e17a8"
+
+vuex-module-decorators@^0.10.1:
+  version "0.10.1"
+  resolved "https://registry.yarnpkg.com/vuex-module-decorators/-/vuex-module-decorators-0.10.1.tgz#a34ebf7c2aec701d19ae60dea0a8f1620825fd9e"
 
 vuex@^3.1.1:
   version "3.1.1"
