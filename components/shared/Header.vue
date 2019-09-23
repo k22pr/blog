@@ -1,6 +1,7 @@
 <template>
   <header flex fic class="w12">
     <nuxt-link to="/" class="home">SubLOG</nuxt-link>
+    <div class="background"></div>
   </header>
 </template>
 

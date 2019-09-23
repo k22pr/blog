@@ -30,7 +30,7 @@ $skeleton-color: rgba(225, 225, 225, 0.2);
 
 body {
   pre[class*="language-"] {
-    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.33);
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.33), inset 0px 0px 40px rgba(255, 255, 255, 0.1);
     margin: 25px 0px 40px 0px;
     background: rgba(34, 38, 42, 1);
   }

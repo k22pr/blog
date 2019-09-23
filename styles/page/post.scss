@@ -29,13 +29,12 @@ section {
   article {
     position: relative;
     z-index: 1;
-    background: #fff;
     margin: 0px auto;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
     @include device-desktop() {
-      margin-top: 33vh;
-      min-height: 67vh;
+      margin-top: 25vh;
+      min-height: 75vh;
       width: $content-max-width;
     }
     @include device-lte-tablet() {
@@ -45,11 +44,13 @@ section {
     }
 
     .post-title {
+      color: #fff;
       font-size: 2rem;
       padding: 2rem;
       padding-bottom: 1rem;
-      border-bottom: 1px solid $oc-gray-1;
+      // border-bottom: 1px solid $oc-gray-1;
       margin-bottom: 1rem;
+
       i {
         color: $oc-gray-5;
       }
@@ -58,6 +59,7 @@ section {
       width: 100%;
       padding: 2rem;
       line-height: 1.7;
+      background: #fff;
     }
   }
 }

@@ -11,6 +11,9 @@
         <!-- <a-skeleton avatar active :paragraph="{ rows: 0 }" :loading="!postData"> <i class="fal fa-brackets-curly"></i> {{ postData.title }} </a-skeleton> -->
         <!-- <a-skeleton avatar active :paragraph="{ rows: 0 }" :loading="!postData"> <i class="fal fa-brackets-curly"></i> {{ postData.title }} </a-skeleton> -->
       </div>
+      <div class="w12 sub-title">
+        <!-- {{ post.category }} -->
+      </div>
       <div class="w12 content">
         <div class="w12" v-if="postData">
           <vue-markdown :source="getContent"></vue-markdown>
@@ -71,6 +74,9 @@ export default class PostView extends Vue {
             id
             title
             content
+            category {
+              name
+            }
             banner {
               name
               url
