@@ -49,7 +49,7 @@ export default class PostView extends Vue {
   public loading: boolean = false;
 
   get bannerTop() {
-    return this.getScroll / 1.5;
+    return this.getScroll / 1.5 - 100;
   }
 
   public created() {

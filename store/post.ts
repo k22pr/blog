@@ -12,6 +12,10 @@ import { IGetPost } from "~/types/graphQL";
 export default class Post extends VuexModule {
   public post: any;
 
+  get Post() {
+    return this.post;
+  }
+
   @Mutation
   async setPost(post: any) {
     this.post = post;
