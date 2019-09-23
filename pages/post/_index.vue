@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="header">
-      <img v-if="postData" :src="`http://localhost:1337${postData.banner.url}`" />
+      <img v-if="postData" :src="`http://localhost:1337${postData.banner.url}`" ref="banner-image" :style="{ top: `${bannerTop}px` }" />
       <div class="blur"></div>
     </div>
     <article>
@@ -23,12 +23,14 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-import { State, Action, Mutation, namespace } from "vuex-class";
+import { State, Getter, Action, Mutation, namespace } from "vuex-class";
 import gql from "graphql-tag";
 // import VueMarkdown from "vue-markdown";
 const VueMarkdown = require("vue-markdown").default;
 import { IImage, IPost } from "~/types/post";
 import { IGetPost } from "~/types/graphQL";
+
+// isClient
 
 @Component({
   components: {
@@ -37,34 +39,30 @@ import { IGetPost } from "~/types/graphQL";
 })
 export default class PostView extends Vue {
   @Action("post/getPost") getPost: any;
+  @Mutation("global/setScroll") setScroll: any;
+  @Getter("global/getScroll") getScroll: any;
   public index!: number;
   public postData: IPost | null = null;
   public loading: boolean = false;
-  private created() {
+
+  get bannerTop() {
+    return this.getScroll / 1.5;
+  }
+
+  public created() {
     console.log(this.$route.params);
     this.index = Number(this.$route.params.index);
-  }
 
-  get getContent() {
-    if (this.postData) {
-      let content = this.postData.content;
-
-      // let findCodeReg = /^```([a-z]+)\n([\s\S]*?)```$/gim;
-      // // let findCode = findCodeReg.exec(this.postData.content);
-      // let match: any = null;
-      // while ((match = findCodeReg.exec(content)) != null) {
-      //   console.log(match);
-      //   var replace = new RegExp(match[0], "gmi");
-      // content.replace(replace, Prism.highlight(match[0], Prism.languages[match[1]], Prism.languages[match[1]]));
-      //   console.log(content);
-      // }
-
-      return content;
+    if (process.browser) {
+      window.addEventListener("scroll", this.setScroll);
     }
-    //get code highlight
   }
-
-  private async mounted() {
+  private destroyed() {
+    if (process.browser) {
+      window.removeEventListener("scroll", this.setScroll);
+    }
+  }
+  public async mounted() {
     const id: string = this.$route.params.index;
     const query: IGetPost = {
       query: gql`
@@ -88,14 +86,24 @@ export default class PostView extends Vue {
     };
     this.postData = await this.getPost(query);
     console.log(this.postData);
+  }
 
-    // this.postData = await this.$http
-    //    .get(`/posts/${id}`)
-    //    .catch((err: any) => {
-    //       console.log(err);
-    //    })
-    //    .then((data: IPost) => data.data);
-    // console.log(this.postData);
+  get getContent() {
+    if (this.postData) {
+      let content = this.postData.content;
+
+      // let findCodeReg = /^```([a-z]+)\n([\s\S]*?)```$/gim;
+      // // let findCode = findCodeReg.exec(this.postData.content);
+      // let match: any = null;
+      // while ((match = findCodeReg.exec(content)) != null) {
+      //   console.log(match);
+      //   var replace = new RegExp(match[0], "gmi");
+      // content.replace(replace, Prism.highlight(match[0], Prism.languages[match[1]], Prism.languages[match[1]]));
+      //   console.log(content);
+      // }
+
+      return content;
+    }
   }
 }
 </script>
