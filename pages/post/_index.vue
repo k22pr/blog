@@ -23,30 +23,12 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
+import { State, Action, Mutation, namespace } from "vuex-class";
 import gql from "graphql-tag";
 // import VueMarkdown from "vue-markdown";
 const VueMarkdown = require("vue-markdown").default;
 import { IImage, IPost } from "~/types/post";
 import { IGetPost } from "~/types/graphQL";
-
-// import VuePrism from "vue-prism";
-// const VuePrism = require("vue-prism");
-// Vue.use(VuePrism);
-// require("~/static/prism.css");
-
-// const Prism = require("prismjs");
-// const Loader = require("prism-loader");
-// console.log(Loader);
-// import Prism from "~/static/prism.js";
-// const Prism = require("~/static/prism.js");
-// console.log(Prism);
-// Prism.plugins.autoloader["languages_path"] = Loader;
-// Prism.plugins.autoloader.languages_path = "https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/";
-// Prism.hooks.add("before-highlight", function(env: any) {
-//   env.element.className += " line-numbers";
-// });
-// const loadLanguages = require("prismjs/components");
-// loadLanguages(["javascript"]);
 
 @Component({
   components: {
@@ -54,6 +36,7 @@ import { IGetPost } from "~/types/graphQL";
   },
 })
 export default class PostView extends Vue {
+  @Action("post/getPost") getPost: any;
   public index!: number;
   public postData: IPost | null = null;
   public loading: boolean = false;
@@ -103,7 +86,7 @@ export default class PostView extends Vue {
       `,
       variables: { id },
     };
-    this.postData = await this.$store.dispatch("post/getPost", query);
+    this.postData = await this.getPost(query);
     console.log(this.postData);
 
     // this.postData = await this.$http
