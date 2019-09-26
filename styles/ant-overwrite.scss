@@ -1,29 +1,47 @@
 $skeleton-color: rgba(225, 225, 225, 0.2);
 
 .ant-skeleton-header .ant-skeleton-avatar {
-   background: $skeleton-color;
+  background: $skeleton-color;
 }
 .ant-skeleton-content {
-   .ant-skeleton-title {
-      background: $skeleton-color;
-   }
-   .ant-skeleton-paragraph > li {
-      background: $skeleton-color;
-   }
+  .ant-skeleton-title {
+    background: $skeleton-color;
+  }
+  .ant-skeleton-paragraph > li {
+    background: $skeleton-color;
+  }
 }
 
 .ant-skeleton.ant-skeleton-active {
-   .ant-skeleton-avatar {
+  .ant-skeleton-avatar {
+    animation: ant-skeleton-loading 1.4s ease infinite;
+    background-size: 400% 100%;
+    // background: linear-gradient(90deg, $skeleton-color 25%, darken($skeleton-color, 10) 37%, $skeleton-color 63%);
+  }
+  .ant-skeleton-content {
+    .ant-skeleton-title,
+    .ant-skeleton-paragraph > li {
       animation: ant-skeleton-loading 1.4s ease infinite;
       background-size: 400% 100%;
-      // background: linear-gradient(90deg, $skeleton-color 25%, darken($skeleton-color, 10) 37%, $skeleton-color 63%);
-   }
-   .ant-skeleton-content {
-      .ant-skeleton-title,
-      .ant-skeleton-paragraph > li {
-         animation: ant-skeleton-loading 1.4s ease infinite;
-         background-size: 400% 100%;
-         // background: linear-gradient(90deg, rgb(245, 245, 245) 25%, darken(rgb(245, 245, 245), 10) 37%, rgb(245, 245, 245) 63%);
-      }
-   }
+      // background: linear-gradient(90deg, rgb(245, 245, 245) 25%, darken(rgb(245, 245, 245), 10) 37%, rgb(245, 245, 245) 63%);
+    }
+  }
+}
+
+body {
+  pre[class*="language-"] {
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.33), inset 0px 0px 40px rgba(255, 255, 255, 0.1);
+    margin: 25px 0px 40px 0px;
+    background: rgba(34, 38, 42, 1);
+  }
+  code[class*="language-"],
+  pre[class*="language-"] {
+    padding: 20px;
+    font-size: 15px;
+    line-height: 1.6rem;
+    letter-spacing: -1px;
+    border-radius: 10px;
+    font-family: "Fira Code", "TypoPRO Fira Code", "Quicksand", sans-serif !important;
+    tab-size: 2;
+  }
 }

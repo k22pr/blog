@@ -1,29 +1,22 @@
 <template>
-   <section flex fjc fic>
-      <div class="login-page">
-         <div flex fic class="w6">
-            <button flex fjc class="black medium w12"><i class="fab fa-github"></i> login with github</button>
-         </div>
+  <section flex fjc fic>
+    <div class="login-page">
+      <div flex fic class="w6">
+        <button flex fjc class="black medium w12"><i class="fab fa-github"></i> login with github</button>
       </div>
-   </section>
+    </div>
+  </section>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "nuxt-property-decorator";
 import { State } from "vuex-class";
-import { Person } from "~/types";
-import Card from "~/components/Card.vue";
 
 @Component({
-   components: {
-      Card,
-   },
-   layout: "main",
+  layout: "main",
 })
 export default class extends Vue {
-   @State people!: Person;
-
-   private created() {}
+  private created() {}
 }
 </script>
 
