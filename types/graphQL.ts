@@ -1,4 +1,4 @@
 export interface IGetPost {
-   query: any;
-   variables: any;
+  query: any;
+  variables?: any;
 }

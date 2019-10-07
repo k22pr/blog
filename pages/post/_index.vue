@@ -52,6 +52,7 @@ import { IGetPost } from '~/types/graphQL';
 export default class PostView extends Vue {
   @Action('post/getPost') getPost: any;
   @Mutation('global/setScroll') setScroll: any;
+  @Mutation('global/setScrollValue') setScrollValue: any;
   @Getter('global/getScroll') getScroll: any;
   public index!: number;
   public postData: IPost | null = null;
@@ -62,7 +63,7 @@ export default class PostView extends Vue {
   }
 
   public created() {
-    console.log(this.$route.params);
+    this.setScrollValue(0);
     this.index = Number(this.$route.params.index);
 
     if (process.browser) {

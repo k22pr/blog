@@ -1,6 +1,6 @@
 <template>
   <header flex fic class="w12">
-    <nuxt-link to="/" class="home">SubLOG {{ testpost }}</nuxt-link>
+    <nuxt-link to="/" class="home">SubLOG </nuxt-link>
     <div class="background" v-if="bannerImage">
       <img :src="`http://localhost:1337${bannerImage}`" :style="{ top: `${bannerTop}px` }" />
       <div class="blur"></div>

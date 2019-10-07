@@ -1,28 +1,44 @@
 <template>
   <a-col span="6">
-    <div class="box" :class="loading ? 'loading' : ''">
+    <nuxt-link
+      tag="div"
+      :to="`/post/${post.id}`"
+      class="box"
+      :class="loading ? 'loading' : ''"
+      :event="loading ? '' : 'click'"
+    >
       <div class="icon"></div>
-      <div class="header"></div>
+      <div class="header">
+        <img :src="imageUrl()" v-if="!loading" />
+      </div>
       <div class="body">
+        <div class="blur"></div>
         <div class="title w12">
           <a-skeleton v-if="loading" :title="false" :paragraph="{ rows: 1 }" active />
-          <div v-else>title</div>
+          <div v-else>{{ post.title }}</div>
         </div>
         <div class="content w12">
           <a-skeleton v-if="loading" :title="false" :paragraph="{ rows: 2 }" active />
-          <div v-else>content...</div>
+          <div v-else>{{ post.content }}</div>
         </div>
       </div>
-    </div>
+    </nuxt-link>
   </a-col>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import { IImage, IPost } from '~/types/post';
+import Config from '~/config';
 
 @Component
 export default class PostCard extends Vue {
-  @Prop() loading: boolean = true;
+  @Prop({ default: true }) loading!: boolean;
+  @Prop() post!: IPost;
+
+  imageUrl() {
+    return `${Config.imageUrl}${this.post.banner.url}`;
+  }
 }
 </script>
 

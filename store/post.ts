@@ -19,8 +19,8 @@ export default class Post extends VuexModule {
   @Mutation
   async setPost(post: any) {
     this.post = post;
-    console.log('set the post data.');
-    console.log(this.post);
+    // console.log('set the post data.');
+    // console.log(this.post);
   }
 
   @Action
