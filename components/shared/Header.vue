@@ -19,12 +19,14 @@ const PostStore = namespace('post');
 @Component
 export default class ComponentName extends Vue {
   @PostStore.Getter('Post') post!: Types.Post.IPost;
+  @PostStore.Getter('getBanner') banner!: Types.Post.IImage;
   @PostStore.State('post') testpost!: Types.Post.IPost;
+  @PostStore.State('bannerImage') testbanner!: Types.Post.IImage;
   @Getter('global/getScroll') getScroll!: number;
 
   get bannerImage() {
-    console.log(this.post);
-    return (this.post && this.post.banner.url) || null;
+    console.log(this.testbanner);
+    return this.testbanner ? this.testbanner : null;
   }
 
   get bannerTop() {

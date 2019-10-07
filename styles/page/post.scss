@@ -61,6 +61,7 @@ section {
       padding: 2rem;
       line-height: 1.7;
       background: #fff;
+      min-height: 50vh;
       &.loading {
         background: $oc-gray-1;
       }

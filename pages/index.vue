@@ -52,7 +52,7 @@ export default class extends Vue {
     const query: IGetPost = {
       query: gql`
         query Posts {
-          posts(start: 0, limit: 0) {
+          posts(start: 0, limit: 0, sort: "id") {
             id
             title
             content

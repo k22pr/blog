@@ -1,6 +1,5 @@
 import { VuexModule, Module, Mutation, Action } from 'vuex-module-decorators';
-import { PostState } from '~/types/state';
-import { MutationTree, ActionTree } from 'vuex';
+import Vue from 'vue';
 
 import Instance from '~/utils/apolloQuery';
 
@@ -10,17 +9,21 @@ import { IGetPost } from '~/types/graphQL';
   namespaced: true,
 })
 export default class Post extends VuexModule {
-  public post: any;
+  public post: any = {};
+  public bannerImage: string = '';
 
   get Post() {
     return this.post;
   }
 
+  get getBanner() {
+    return this.bannerImage;
+  }
+
   @Mutation
   async setPost(post: any) {
     this.post = post;
-    // console.log('set the post data.');
-    // console.log(this.post);
+    this.bannerImage = post.banner.url;
   }
 
   @Action

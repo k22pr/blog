@@ -41,6 +41,7 @@ import gql from 'graphql-tag';
 const VueMarkdown = require('vue-markdown').default;
 import { IImage, IPost } from '~/types/post';
 import { IGetPost } from '~/types/graphQL';
+import Config from '~/config';
 
 // isClient
 
@@ -118,6 +119,10 @@ export default class PostView extends Vue {
       // content.replace(replace, Prism.highlight(match[0], Prism.languages[match[1]], Prism.languages[match[1]]));
       //   console.log(content);
       // }
+
+      let findReg = /\!\[(.+)\]\((.+)\)/gim;
+      let reg = new RegExp(findReg);
+      content = content.replace(reg, `![$1](${Config.imageUrl}$2)`);
 
       return content;
     }
