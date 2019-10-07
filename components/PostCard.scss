@@ -1,0 +1,47 @@
+@import '~/styles/import.scss';
+
+.box {
+  top: 0px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 24px;
+  background: #fff;
+  border: 1px solid $oc-gray-1;
+  border-radius: 4px;
+  box-shadow: 0px 0px 16px rgba(32, 36, 40, 0.1);
+  height: 300px;
+  transition: 0.2s;
+  &:hover {
+    top: -4px;
+    box-shadow: 0px 0px 24px rgba(32, 36, 40, 0.2);
+  }
+  &.loading {
+    opacity: 0.7;
+  }
+  .icon {
+    position: absolute;
+    top: calc(50% - 60px);
+    right: 16px;
+    background: #fff;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+  }
+  .header {
+    min-height: 150px;
+    background: $oc-gray-3;
+  }
+  .body {
+    padding: 12px;
+    .title {
+      line-height: 1;
+      font-size: 1.3rem;
+      padding-bottom: 12px;
+    }
+    .content {
+      border-top: 1px solid $oc-gray-1;
+      padding-top: 4px;
+      color: $oc-gray-7;
+    }
+  }
+}
