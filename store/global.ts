@@ -1,4 +1,4 @@
-import { VuexModule, Module, Mutation, Action } from "vuex-module-decorators";
+import { VuexModule, Module, Mutation, Action } from 'vuex-module-decorators';
 
 @Module({
   namespaced: true,
@@ -13,5 +13,10 @@ export default class Global extends VuexModule {
   @Mutation
   setScroll(event: any) {
     this.scroll = window.scrollY;
+  }
+
+  @Mutation
+  setScrollValue(scroll: number) {
+    this.scroll = scroll;
   }
 }

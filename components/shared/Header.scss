@@ -1,7 +1,7 @@
-@import "../../import.scss";
+@import '~/styles/import.scss';
 
 header {
-  z-index: 99;
+  z-index: 50;
   min-height: 60px;
   padding: 0px 1rem;
   position: fixed;
@@ -21,7 +21,7 @@ header {
     width: 100%;
     img {
       position: absolute;
-      width: 100%;
+      width: calc(100% + 50px);
       left: 50%;
       transform: translate(-50%, 0%);
       min-width: $content-max-width;

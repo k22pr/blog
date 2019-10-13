@@ -1,0 +1,20 @@
+@import '~/styles/import.scss';
+
+section {
+  height: 100vh;
+  article {
+    margin: 10vh 0px;
+    .container {
+      .title {
+        font-size: 1.7rem;
+        color: $oc-gray-6;
+        padding-bottom: 12px;
+      }
+      &:not(:last-child) {
+        padding-bottom: 24px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.13);
+        margin-bottom: 24px;
+      }
+    }
+  }
+}
