@@ -1,12 +1,6 @@
 <template>
-  <a-col span="6">
-    <nuxt-link
-      tag="div"
-      :to="`/post/${post.id}`"
-      class="box"
-      :class="loading ? 'loading' : ''"
-      :event="loading ? '' : 'click'"
-    >
+  <a-col :xs="24" :sm="12" :md="8" :lg="6">
+    <nuxt-link tag="div" :to="`/post/${post.id}`" class="box" :class="loading ? 'loading' : ''" :event="loading ? '' : 'click'">
       <div class="icon"></div>
       <div class="header">
         <img :src="imageUrl()" v-if="!loading" />
@@ -27,9 +21,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import { IImage, IPost } from '~/types/post';
-import Config from '~/config';
+import { Component, Prop, Vue } from "vue-property-decorator";
+import { IImage, IPost } from "~/types/post";
+import Config from "~/config";
 
 @Component
 export default class PostCard extends Vue {
