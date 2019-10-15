@@ -27,9 +27,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import { IImage, IPost } from '~/types/post';
-import Config from '~/config';
+import { Component, Prop, Vue } from "vue-property-decorator";
+import { IImage, IPost } from "~/types/post";
+import Config from "~/config";
 
 @Component
 export default class PostCard extends Vue {
