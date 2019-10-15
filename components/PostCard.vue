@@ -1,5 +1,5 @@
 <template>
-  <a-col span="6">
+  <a-col span="6" :xl="6" :md="8" :sm="12" :xs="24">
     <nuxt-link
       tag="div"
       :to="`/post/${post.id}`"
