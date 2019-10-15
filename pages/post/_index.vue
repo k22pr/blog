@@ -23,7 +23,12 @@
       </div>
       <div class="w12 content" :class="loading ? 'loading' : ''">
         <div class="w12" v-if="postData">
-          <vue-markdown :source="getContent"></vue-markdown>
+          <vue-markdown
+            :source="getContent"
+            data-aos="fade-zoom-in"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="600"
+          ></vue-markdown>
         </div>
         <div class="w12" v-else>
           <a-skeleton active :title="false" :paragraph="{ rows: 10 }" :loading="!postData" />
