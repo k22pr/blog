@@ -4,23 +4,13 @@
       <div class="container w12">
         <div class="title">Recent Post</div>
         <a-row class="w12" :gutter="24">
-          <post-card
-            v-for="(post, index) in getPostList || 8"
-            :key="index"
-            :post="post"
-            :loading="!getPostList"
-          ></post-card>
+          <post-card v-for="(post, index) in getPostList || 8" :key="index" :post="post" :loading="!getPostList"></post-card>
         </a-row>
       </div>
       <div class="container w12">
         <div class="title">Recent Vue.js Category</div>
         <a-row class="w12" :gutter="24">
-          <post-card
-            v-for="(post, index) in getPostList || 8"
-            :key="index"
-            :post="post"
-            :loading="!getPostList"
-          ></post-card>
+          <post-card v-for="(post, index) in getPostList || 8" :key="index" :post="post" :loading="!getPostList"></post-card>
         </a-row>
       </div>
     </article>
@@ -28,17 +18,17 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator';
-import gql from 'graphql-tag';
+import { Component, Vue } from "nuxt-property-decorator";
+import gql from "graphql-tag";
 
-import { IImage, IPost } from '~/types/post';
-import { IGetPost } from '~/types/graphQL';
-import Instance from '~/utils/apolloQuery';
+import { IImage, IPost } from "~/types/post";
+import { IGetPost } from "~/types/graphQL";
+import Instance from "~/utils/apolloQuery";
 
-import PostCard from '~/components/PostCard.vue';
+import PostCard from "~/components/PostCard.vue";
 
 @Component({
-  layout: 'main',
+  layout: "main",
   components: {
     PostCard,
   },
@@ -67,7 +57,6 @@ export default class extends Vue {
       `,
     };
     const data = await Instance.Query(query);
-    console.log(data);
 
     this.postList = data.posts;
 
