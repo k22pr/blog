@@ -1,6 +1,12 @@
 <template>
-  <a-col :xs="24" :sm="12" :md="8" :lg="6">
-    <nuxt-link tag="div" :to="`/post/${post.id}`" class="box" :class="loading ? 'loading' : ''" :event="loading ? '' : 'click'">
+  <a-col span="6" :xl="6" :md="8" :sm="12" :xs="24">
+    <nuxt-link
+      tag="div"
+      :to="`/post/${post.id}`"
+      class="box"
+      :class="loading ? 'loading' : ''"
+      :event="loading ? '' : 'click'"
+    >
       <div class="icon"></div>
       <div class="header">
         <img :src="imageUrl()" v-if="!loading" />
