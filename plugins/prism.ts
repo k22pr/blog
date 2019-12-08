@@ -1,5 +1,6 @@
 import Vue from "vue";
-import Prism from "vue-prism";
+// import Prism from "vue-prism";
+var Prism = require("vue-prism");
 
 import "prismjs";
 
