@@ -1,4 +1,4 @@
-@import '~/styles/import.scss';
+@import "~/styles/import.scss";
 
 .box {
   top: 0px;
@@ -16,9 +16,22 @@
     &:hover {
       top: -4px;
       box-shadow: 0px 0px 24px rgba(32, 36, 40, 0.2);
+      border-radius: 20px;
       img {
-        transition: 1s;
-        transform: translate(-50%, -50%) scale(0.8);
+        transition: 0.3s;
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+      .header {
+        height: 75px;
+        img {
+          top: calc(50% + 100px);
+        }
+      }
+      .body {
+        top: 2px;
+        height: calc(100% - 75px);
+        box-shadow: 0px -5px 20px rgba(0, 0, 0, 0.33);
+        border-radius: 20px;
       }
     }
   }
@@ -38,19 +51,25 @@
     position: relative;
     height: 150px;
     background: $oc-gray-3;
-    overflow: hidden;
+    transition: 0.3s;
+    // overflow: hidden;
     img {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      transition: 0.5s;
+      transition: 0.3s;
+      height: 400px;
     }
   }
   .body {
     position: relative;
     height: calc(100% - 150px);
     padding: 12px;
+    transition: 0.3s;
+    backdrop-filter: blur(16px) saturate(100%);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px -5px 20px rgba(0, 0, 0, 0.1);
     .blur {
       z-index: 1;
       position: absolute;
@@ -58,11 +77,7 @@
       height: 100%;
       bottom: 0px;
       left: 0px;
-      background: -webkit-linear-gradient(
-        bottom,
-        rgba(255, 255, 255, 1) 20%,
-        rgba(255, 255, 255, 0) 60%
-      );
+      background: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 60%);
     }
     .title {
       line-height: 1;

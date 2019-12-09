@@ -1,9 +1,9 @@
-import { ApolloClient } from "apollo-client";
-import { HttpLink } from "apollo-link-http";
-import { InMemoryCache } from "apollo-cache-inmemory";
-const fetch = require("isomorphic-fetch");
+import { ApolloClient } from 'apollo-client';
+import { HttpLink } from 'apollo-link-http';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+const fetch = require('isomorphic-fetch');
 
-import Config from "../config";
+import Config from '~/config';
 
 export default new ApolloClient({
   link: new HttpLink({
