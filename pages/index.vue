@@ -36,7 +36,7 @@ import PostCard from "~/components/PostCard.vue";
 export default class extends Vue {
   public postList: IPost[] = [];
   public get getPostList() {
-    return this.postList.length == 0 ? null : this.postList;
+    return !this.postList ? null : this.postList;
   }
   public async created() {
     const query: IGetPost = {
