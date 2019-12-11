@@ -1,13 +1,17 @@
 <template>
   <section>
     <div class="header">
-      <img v-if="postData" :src="`http://localhost:1337${postData.banner.url}`" ref="banner-image" :style="{ top: `${bannerTop}px` }" />
+      <img :src="`http://localhost:1337/uploads/b320e730e6a6443c9a64155347a10cb7.jpg`" ref="banner-image" :style="{ top: `${bannerTop}px` }" />
+      <!-- <img :src="`http://localhost:1337${postData.banner.url}`" ref="banner-image" :style="{ top: `${bannerTop}px` }" /> -->
       <div class="blur"></div>
     </div>
+    <!-- <overdrive :id="`post`"> -->
     <article>
       <div class="w12 post-title">
-        <div class="w12" v-if="postData"><i class="fal fa-brackets-curly"></i> {{ postData.title }}</div>
-        <div class="w12" v-else><a-skeleton avatar active :paragraph="{ rows: 0 }" /></div>
+        <overdrive :id="`title-${this.$route.params.index}`">
+          <div class="w12" v-if="postData"><i class="fal fa-brackets-curly"></i> {{ postData.title }}</div>
+          <div class="w12" v-else><a-skeleton avatar active :paragraph="{ rows: 0 }" /></div>
+        </overdrive>
         <!-- <a-skeleton avatar active :paragraph="{ rows: 0 }" :loading="!postData"> <i class="fal fa-brackets-curly"></i> {{ postData.title }} </a-skeleton> -->
         <!-- <a-skeleton avatar active :paragraph="{ rows: 0 }" :loading="!postData"> <i class="fal fa-brackets-curly"></i> {{ postData.title }} </a-skeleton> -->
       </div>
@@ -23,6 +27,7 @@
         </div>
       </div>
     </article>
+    <!-- </overdrive> -->
   </section>
 </template>
 
@@ -35,6 +40,8 @@ const VueMarkdown = require("vue-markdown").default;
 import { IImage, IPost } from "~/types/post";
 import { IGetPost } from "~/types/graphQL";
 import Config from "~/config";
+
+var easing = require("eases/quart-in-out");
 
 // isClient
 
@@ -51,6 +58,8 @@ export default class PostView extends Vue {
   public index!: number;
   public postData: IPost | null = null;
   public loading: boolean = false;
+
+  public easing = easing;
 
   get bannerTop() {
     return this.getScroll / 1.5 - 100;
