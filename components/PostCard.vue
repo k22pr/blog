@@ -5,17 +5,21 @@
       <div class="header">
         <img :src="imageUrl()" v-if="!loading" />
       </div>
+      <!-- <overdrive :id="`post`" :easing="easing" :duration="350"> -->
       <div class="body">
         <div class="blur"></div>
-        <div class="title w12">
-          <a-skeleton v-if="loading" :title="false" :paragraph="{ rows: 1 }" active />
-          <div v-else>{{ post.title }}</div>
-        </div>
+        <overdrive :id="`title-${post.id}`" :duration="100">
+          <div class="title w12">
+            <a-skeleton v-if="loading" :title="false" :paragraph="{ rows: 1 }" active />
+            <div v-else>{{ post.title }}</div>
+          </div>
+        </overdrive>
         <div class="content w12">
           <a-skeleton v-if="loading" :title="false" :paragraph="{ rows: 2 }" active />
           <div v-else>{{ stripContent() }}</div>
         </div>
       </div>
+      <!-- </overdrive> -->
     </nuxt-link>
   </a-col>
 </template>
@@ -25,11 +29,16 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 import { IImage, IPost } from "~/types/post";
 import Config from "~/config";
 
+// import * as easing from "eases/quart-in-out"; // Bring 'yr own easing functions!
+var easing = require("eases/quart-in-out");
+
 const removeMd = require("remove-markdown");
 @Component
 export default class PostCard extends Vue {
   @Prop({ default: true }) loading!: boolean;
   @Prop() post!: IPost;
+
+  public easing = easing;
 
   imageUrl() {
     return `${Config.imageUrl}${this.post.banner.url}`;

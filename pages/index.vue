@@ -7,12 +7,12 @@
           <post-card v-for="(post, index) in getPostList || 8" :key="index" :post="post" :loading="!getPostList"></post-card>
         </a-row>
       </div>
-      <div class="container w12">
+      <!-- <div class="container w12">
         <div class="title">Recent Vue.js Category</div>
         <a-row class="w12" :gutter="24">
           <post-card v-for="(post, index) in getPostList || 8" :key="index" :post="post" :loading="!getPostList"></post-card>
         </a-row>
-      </div>
+      </div> -->
     </article>
   </section>
 </template>
