@@ -1,4 +1,4 @@
-@import '~/styles/import.scss';
+@import "~/styles/import.scss";
 
 section {
   .header {
@@ -61,6 +61,8 @@ section {
       padding: 2rem;
       line-height: 1.7;
       background: #fff;
+      // background: rgba(255, 255, 255, 0.5);
+      // backdrop-filter: blur(32px) saturate(100%);
       min-height: 50vh;
       &.loading {
         background: $oc-gray-1;
