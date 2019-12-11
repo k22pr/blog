@@ -1,17 +1,16 @@
 <template>
   <section>
     <div class="header">
-      <img :src="`http://localhost:1337/uploads/b320e730e6a6443c9a64155347a10cb7.jpg`" ref="banner-image" :style="{ top: `${bannerTop}px` }" />
-      <!-- <img :src="`http://localhost:1337${postData.banner.url}`" ref="banner-image" :style="{ top: `${bannerTop}px` }" /> -->
+      <img :src="postData.banner.url" v-if="postData" ref="banner-image" :style="{ top: `${bannerTop}px` }" />
       <div class="blur"></div>
     </div>
     <!-- <overdrive :id="`post`"> -->
     <article>
       <div class="w12 post-title">
-        <overdrive :id="`title-${this.$route.params.index}`">
-          <div class="w12" v-if="postData"><i class="fal fa-brackets-curly"></i> {{ postData.title }}</div>
-          <div class="w12" v-else><a-skeleton avatar active :paragraph="{ rows: 0 }" /></div>
-        </overdrive>
+        <!-- <overdrive :id="`title-${this.$route.params.index}`" :duration="10000"> -->
+        <div class="w12" v-if="postData"><i class="fal fa-brackets-curly"></i> {{ postData.title }}</div>
+        <div class="w12" v-else><a-skeleton avatar active :paragraph="{ rows: 0 }" /></div>
+        <!-- </overdrive> -->
         <!-- <a-skeleton avatar active :paragraph="{ rows: 0 }" :loading="!postData"> <i class="fal fa-brackets-curly"></i> {{ postData.title }} </a-skeleton> -->
         <!-- <a-skeleton avatar active :paragraph="{ rows: 0 }" :loading="!postData"> <i class="fal fa-brackets-curly"></i> {{ postData.title }} </a-skeleton> -->
       </div>
@@ -91,10 +90,6 @@ export default class PostView extends Vue {
               name
             }
             banner {
-              name
-              url
-            }
-            logo {
               name
               url
             }

@@ -46,9 +46,6 @@ export default class extends Vue {
             id
             title
             content
-            logo {
-              url
-            }
             banner {
               url
             }

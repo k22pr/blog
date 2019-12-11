@@ -3,17 +3,17 @@
     <nuxt-link tag="div" :to="`/post/${post.id}`" class="box" :class="loading ? 'loading' : ''" :event="loading ? '' : 'click'">
       <div class="icon"></div>
       <div class="header">
-        <img :src="imageUrl()" v-if="!loading" />
+        <img :src="this.post.banner.url" v-if="!loading" />
       </div>
       <!-- <overdrive :id="`post`" :easing="easing" :duration="350"> -->
       <div class="body">
         <div class="blur"></div>
-        <overdrive :id="`title-${post.id}`" :duration="100">
-          <div class="title w12">
-            <a-skeleton v-if="loading" :title="false" :paragraph="{ rows: 1 }" active />
-            <div v-else>{{ post.title }}</div>
-          </div>
-        </overdrive>
+        <!-- <overdrive :id="`title-${post.id}`" :duration="10000"> -->
+        <div class="title w12">
+          <a-skeleton v-if="loading" :title="false" :paragraph="{ rows: 1 }" active />
+          <div v-else>{{ post.title }}</div>
+        </div>
+        <!-- </overdrive> -->
         <div class="content w12">
           <a-skeleton v-if="loading" :title="false" :paragraph="{ rows: 2 }" active />
           <div v-else>{{ stripContent() }}</div>
@@ -40,9 +40,9 @@ export default class PostCard extends Vue {
 
   public easing = easing;
 
-  imageUrl() {
-    return `${Config.imageUrl}${this.post.banner.url}`;
-  }
+  // imageUrl() {
+  //   return `${Config.imageUrl}${this.post.banner.url}`;
+  // }
 
   public stripContent() {
     return removeMd(this.post.content);
