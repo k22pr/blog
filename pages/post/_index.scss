@@ -3,11 +3,12 @@
 section {
   .header {
     z-index: 0;
-    position: absolute;
+    // position: absolute;
+    position: relative;
     top: 0px;
     left: 0px;
     width: 100%;
-    height: 66vh;
+    height: 70vh;
     background: $oc-gray-1;
     overflow: hidden;
     img {
@@ -26,18 +27,24 @@ section {
       background: rgba(32, 36, 40, 0.5);
     }
   }
+  .wave-container {
+    position: absolute;
+    bottom: 0px;
+    height: auto;
+    width: 100%;
+  }
   article {
     z-index: 51;
     position: relative;
     // z-index: 1;
     margin: 0px auto;
     @include device-desktop() {
-      margin-top: 25vh;
+      margin-top: -40vh;
       min-height: 75vh;
       width: $content-max-width;
     }
     @include device-lte-tablet() {
-      margin-top: 30vh;
+      margin-top: -30vh;
       min-height: 70vh;
       width: 100%;
     }
@@ -49,6 +56,7 @@ section {
       padding-bottom: 1rem;
       // border-bottom: 1px solid $oc-gray-1;
       margin-bottom: 1rem;
+      text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5), 0px -1px 2px rgba(0, 0, 0, 0.5), 1px 0px 2px rgba(0, 0, 0, 0.5), -1px 0px 2px rgba(0, 0, 0, 0.5);
 
       i {
         color: $oc-gray-5;

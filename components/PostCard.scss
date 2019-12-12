@@ -87,12 +87,14 @@
     }
     .title {
       line-height: 1;
+      color: $black;
       font-size: 1.2rem;
+      font-weight: bold;
       padding-bottom: 12px;
     }
     .content {
-      border-top: 1px solid $oc-gray-1;
-      padding-top: 4px;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      padding-top: 8px;
       color: $oc-gray-7;
       line-height: 1.2;
       font-size: 15px;

@@ -8,12 +8,12 @@
       <!-- <overdrive :id="`post`" :easing="easing" :duration="350"> -->
       <div class="body">
         <div class="blur"></div>
-        <!-- <overdrive :id="`title-${post.id}`" :duration="10000"> -->
-        <div class="title w12">
-          <a-skeleton v-if="loading" :title="false" :paragraph="{ rows: 1 }" active />
-          <div v-else>{{ post.title }}</div>
+        <div class="title w12 tsw">
+          <!-- <overdrive :id="`title-${post.id}`" :duration="1000"> -->
+            <a-skeleton v-if="loading" :title="false" :paragraph="{ rows: 1 }" active />
+            <div v-else>{{ post.title }}</div>
+          <!-- </overdrive> -->
         </div>
-        <!-- </overdrive> -->
         <div class="content w12">
           <a-skeleton v-if="loading" :title="false" :paragraph="{ rows: 2 }" active />
           <div v-else>{{ stripContent() }}</div>
