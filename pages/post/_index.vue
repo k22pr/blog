@@ -3,14 +3,21 @@
     <div class="header">
       <img :src="postData.banner.url" v-if="postData" ref="banner-image" :style="{ top: `${bannerTop}px` }" />
       <div class="blur"></div>
+      <!-- <div class="wave-container">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path fill="#ffffff" fill-opacity="1" d="M0,96L30,128C60,160,120,224,180,229.3C240,235,300,181,360,170.7C420,160,480,192,540,176C600,160,660,96,720,64C780,32,840,32,900,58.7C960,85,1020,139,1080,165.3C1140,192,1200,192,1260,165.3C1320,139,1380,85,1410,58.7L1440,32L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path>
+        </svg>
+      </div> -->
     </div>
     <!-- <overdrive :id="`post`"> -->
     <article>
-      <div class="w12 post-title">
-        <!-- <overdrive :id="`title-${this.$route.params.index}`" :duration="10000"> -->
-        <div class="w12" v-if="postData"><i class="fal fa-brackets-curly"></i> {{ postData.title }}</div>
+      <div class="w12 post-title tsb">
+        <div class="w12" v-if="postData">
+          <!-- <overdrive :id="`title-${this.$route.params.index}`" :duration="1000"> -->
+          <div class="w12"><i class="fal fa-brackets-curly"></i> {{ postData.title }}</div>
+          <!-- </overdrive> -->
+        </div>
         <div class="w12" v-else><a-skeleton avatar active :paragraph="{ rows: 0 }" /></div>
-        <!-- </overdrive> -->
         <!-- <a-skeleton avatar active :paragraph="{ rows: 0 }" :loading="!postData"> <i class="fal fa-brackets-curly"></i> {{ postData.title }} </a-skeleton> -->
         <!-- <a-skeleton avatar active :paragraph="{ rows: 0 }" :loading="!postData"> <i class="fal fa-brackets-curly"></i> {{ postData.title }} </a-skeleton> -->
       </div>
