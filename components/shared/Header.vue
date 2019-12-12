@@ -20,4 +20,4 @@ export default class ComponentName extends Vue {
 }
 </script>
 
-<style scoped lang="scss" src="./Header.scss" />
+<style scoped lang="scss" src="./header.scss" />

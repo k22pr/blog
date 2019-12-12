@@ -3,4 +3,9 @@ import Vue from "vue";
 var AOS = require("aos");
 import "aos/dist/aos.css";
 
-AOS.init();
+AOS.init({
+  easing: "ease-in-sine",
+  offset: 300,
+  delay: 100,
+  duration: 600,
+});
