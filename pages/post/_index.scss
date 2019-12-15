@@ -17,14 +17,30 @@ section {
         backdrop-filter: none;
       }
     }
-    img {
-      // position: absolute;
-      position: fixed;
-      width: calc(100%);
-      // height: calc(100%);
-      left: 50%;
-      transform: translate(-50%, 0%);
+    .image-box {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      // left: 50%;
+      // transform: translate(-50%, 0%);
       // min-width: $content-max-width;
+      // height: calc(100%);
+      top: 50%;
+      transform: translate(0%, -50%);
+      @include device-lte-tablet() {
+        top: initial;
+        left: 50%;
+        transform: translate(-50%, 0%);
+      }
+      img {
+        width: 100%;
+        @include device-lte-tablet() {
+          width: initial;
+          height: 100%;
+        }
+        // position: absolute;
+        position: fixed;
+      }
     }
     .blur {
       position: absolute;
@@ -44,7 +60,6 @@ section {
     width: 100%;
   }
   article {
-    z-index: 10;
     // z-index: 51;
     position: relative;
     margin: 0px auto;
@@ -66,7 +81,9 @@ section {
       .post-title {
         font-size: 3rem;
         // text-align: center;
-        padding-left: 20%;
+        width: 100%;
+        padding-left: 10%;
+        padding-right: 10%;
         // opacity: 0;
         i {
           visibility: hidden;

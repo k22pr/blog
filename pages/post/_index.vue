@@ -1,7 +1,9 @@
 <template>
   <section>
     <div class="header" :class="{ 'on-top': getScroll == 0 }">
-      <img :src="postData.banner.url" v-if="postData" ref="banner-image" :style="bannerStyle" />
+      <div class="image-box">
+        <img :src="postData.banner.url" v-if="postData" ref="banner-image" :style="bannerStyle" />
+      </div>
       <div class="blur"></div>
     </div>
     <!-- <overdrive :id="`post`"> -->
