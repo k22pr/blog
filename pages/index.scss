@@ -14,9 +14,11 @@ section {
     }
   }
   article {
+    padding: 12px;
     // margin-top: 200px;
     // margin: 10vh 0px;
     .container {
+      margin-top: 20px;
       .title {
         font-size: 1.7rem;
         color: $oc-gray-6;

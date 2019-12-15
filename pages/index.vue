@@ -12,22 +12,31 @@
     <article flex>
       <div id="recent-container" class="container w12" data-aos="fade-up" data-aos-anchor="#recent-container">
         <div class="title" flex fic><i class="fal fa-sparkles"></i> <span>Recent Post</span></div>
-        <a-row class="w12" :gutter="24">
-          <post-card v-for="(post, index) in getPostList || 8" :key="index" :post="post" :loading="!getPostList"></post-card>
+        <a-row class="w12" :gutter="24" v-if="postList">
+          <post-card v-for="(post, index) in postList" :key="index" :post="post" :loading="false"></post-card>
+        </a-row>
+        <a-row class="w12" :gutter="24" v-else>
+          <post-card v-for="(post, index) in 4" :key="index" :loading="true"></post-card>
         </a-row>
       </div>
-      <new-line />
+      <new-line data-aos="fade-in" />
       <div id="vue-container" class="container w12 hh" data-aos="fade-up" data-aos-anchor="#vue-container">
         <div class="title" flex fic><i class="fab fa-vuejs"></i> <span>Vue.js Category</span></div>
-        <a-row class="w12" :gutter="24">
-          <post-card v-for="(post, index) in getPostList || 8" :key="index" :post="post" :loading="!getPostList"></post-card>
+        <a-row class="w12" :gutter="24" v-if="postList">
+          <post-card v-for="(post, index) in postList" :key="index" :post="post" :loading="false"></post-card>
+        </a-row>
+        <a-row class="w12" :gutter="24" v-else>[]
+          <post-card v-for="(post, index) in 4" :key="index" :loading="true"></post-card>
         </a-row>
       </div>
-      <new-line />
+      <new-line data-aos="fade-in" />
       <div id="etc-container" class="container w12" data-aos="fade-up" data-aos-anchor="#etc-container">
         <div class="title" flex fic><i class="fal fa-chart-network"></i> <span>Etc. Category</span></div>
-        <a-row class="w12" :gutter="24">
-          <post-card v-for="(post, index) in getPostList || 8" :key="index" :post="post" :loading="!getPostList"></post-card>
+        <a-row class="w12" :gutter="24" v-if="postList">
+          <post-card v-for="(post, index) in postList" :key="index" :post="post" :loading="false"></post-card>
+        </a-row>
+        <a-row class="w12" :gutter="24" v-else>
+          <post-card v-for="(post, index) in 4" :key="index" :loading="true"></post-card>
         </a-row>
       </div>
     </article>
@@ -53,10 +62,8 @@ import NewLine from "~/components/base/newLine.vue";
   },
 })
 export default class extends Vue {
-  public postList: IPost[] = [];
-  public get getPostList() {
-    return !this.postList ? null : this.postList;
-  }
+  public postList: IPost[] | null = null;
+
   public async created() {
     const query: IGetPost = {
       query: gql`
