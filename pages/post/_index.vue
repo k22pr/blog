@@ -1,16 +1,11 @@
 <template>
   <section>
-    <div class="header">
-      <img :src="postData.banner.url" v-if="postData" ref="banner-image" :style="{ top: `${bannerTop}px` }" />
+    <div class="header" :class="{ 'on-top': getScroll == 0 }">
+      <img :src="postData.banner.url" v-if="postData" ref="banner-image" :style="bannerStyle" />
       <div class="blur"></div>
-      <!-- <div class="wave-container">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          <path fill="#ffffff" fill-opacity="1" d="M0,96L30,128C60,160,120,224,180,229.3C240,235,300,181,360,170.7C420,160,480,192,540,176C600,160,660,96,720,64C780,32,840,32,900,58.7C960,85,1020,139,1080,165.3C1140,192,1200,192,1260,165.3C1320,139,1380,85,1410,58.7L1440,32L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path>
-        </svg>
-      </div> -->
     </div>
     <!-- <overdrive :id="`post`"> -->
-    <article>
+    <article :class="{ 'on-top': getScroll == 0 }">
       <div class="w12 post-title tsb">
         <div class="w12" v-if="postData">
           <!-- <overdrive :id="`title-${this.$route.params.index}`" :duration="1000"> -->
@@ -67,8 +62,12 @@ export default class PostView extends Vue {
 
   public easing = easing;
 
-  get bannerTop() {
-    return this.getScroll / 1.5 - 100;
+  get bannerStyle() {
+    let bodySize = window.innerHeight;
+    // console.log(bodySize);
+    // console.log(window.document.documentElement.clientHeight);
+    // console.log(window.document.documentElement.offsetHeight);
+    return this.getScroll < bodySize ? { top: this.getScroll / 1.5 + "px" } : { top: this.getScroll + "px" };
   }
 
   public created() {

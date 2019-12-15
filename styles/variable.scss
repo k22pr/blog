@@ -10,7 +10,7 @@ $sub-color: $oc-violet-5;
 $body-bg: #fff;
 $footer-background: #727071;
 
-$content-max-width: 1280px;
+$content-max-width: 1024px;
 $fullsize-min-width: 1920px;
 
 $default-font-size: 18px;
@@ -25,10 +25,10 @@ $on-black-op-text: rgba(255, 255, 255, 0.33);
 $on-white-op-text: rgba(128, 128, 128, 0.5);
 
 $vector: (
-   t: top,
-   r: right,
-   b: bottom,
-   l: left,
+  t: top,
+  r: right,
+  b: bottom,
+  l: left,
 );
 $device-name: (m, t, d);
 $device-size: (0px, 540px, 960px, 65535px);

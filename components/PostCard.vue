@@ -1,6 +1,6 @@
 <template>
   <a-col span="6" :xl="6" :md="8" :sm="12" :xs="24">
-    <nuxt-link tag="div" :to="`/post/${post.id}`" class="box" :class="loading ? 'loading' : ''" :event="loading ? '' : 'click'">
+    <nuxt-link tag="div" :to="`/post/${post ? post.id : ''}`" class="box" :class="{ 'loading disabled': loading }">
       <div class="icon"></div>
       <div class="header">
         <img :src="this.post.banner.url" v-if="!loading" />
@@ -10,8 +10,8 @@
         <div class="blur"></div>
         <div class="title w12 tsw">
           <!-- <overdrive :id="`title-${post.id}`" :duration="1000"> -->
-            <a-skeleton v-if="loading" :title="false" :paragraph="{ rows: 1 }" active />
-            <div v-else>{{ post.title }}</div>
+          <a-skeleton v-if="loading" :title="false" :paragraph="{ rows: 1 }" active />
+          <div v-else>{{ post.title }}</div>
           <!-- </overdrive> -->
         </div>
         <div class="content w12">

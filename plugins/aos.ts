@@ -4,8 +4,8 @@ var AOS = require("aos");
 import "aos/dist/aos.css";
 
 AOS.init({
-  easing: "ease-in-sine",
-  offset: 300,
+  easing: "ease-in",
+  offset: 100,
   delay: 100,
   duration: 600,
 });
