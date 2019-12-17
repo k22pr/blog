@@ -1,14 +1,14 @@
-FROM node:10
+FROM node:10-alpine
 
 # Create app directory
 WORKDIR /app
 ADD . /app/
 
 # global install & update
-RUN npm i -g npm && npm i -g yarn
+#RUN npm i -g npm && npm i -g yarn
 
-# RUN rm yarn.lock
-# RUN rm package-lock.json
+#RUN rm yarn.lock
+#RUN rm package-lock.json
 RUN yarn
 RUN yarn build
 
