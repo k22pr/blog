@@ -40,7 +40,8 @@ jobs:
       # run tests!
       - run: yarn build
 
+      - run:
+          name: Deploy Over SSH
           command: |
             ssh root@some.is "./blog-nuxt/deploy.sh"
-
       # - run: yarn start
