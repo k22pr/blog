@@ -2,46 +2,65 @@
 #
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
-version: 2
-jobs:
-  build:
-    branches:
-      only:
-        - master
+version: 2.1
+orbs:
+  aws-ecr: circleci/aws-ecr@0.0.10
 
-    docker:
-      # specify the version you desire here
-      - image: circleci/node:10.14
+# jobs:
+#   build:
+#     branches:
+#       only:
+#         - master
+#     docker:
+#       # specify the version you desire here
+#       - image: circleci/node:10.14
 
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
+#       # Specify service dependencies here if necessary
+#       # CircleCI maintains a library of pre-built images
+#       # documented at https://circleci.com/docs/2.0/circleci-images/
+#       # - image: circleci/mongo:3.4.4
 
-    working_directory: ~/repo
+#     working_directory: ~/repo
 
-    steps:
-      - checkout
+#     steps:
+#       - checkout
 
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
+#       # Download and cache dependencies
+#       - restore_cache:
+#           keys:
+#             - v1-dependencies-{{ checksum "package.json" }}
+#             # fallback to using the latest cache if no exact match is found
+#             - v1-dependencies-
 
-      - run: yarn install
+#       - run: yarn install
 
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+#       - save_cache:
+#           paths:
+#             - node_modules
+#           key: v1-dependencies-{{ checksum "package.json" }}
 
-      # run tests!
-      - run: yarn build
+#       # run tests!
+#       - run: yarn build
 
-      - run:
-          name: Deploy Over SSH
-          command: |
-            ssh root@some.is -o StrictHostKeyChecking=no "cd blog-nuxt && git pull && docker-compose up -d --build"
-      # - run: yarn start
+#       - run:
+#           name: Deploy Over SSH
+#           command: |
+#             ssh root@some.is -o StrictHostKeyChecking=no "cd blog-nuxt && git pull && docker-compose up -d --build"
+# - run: yarn start
+
+workflows:
+  version: 2
+  build_and_push_image:
+    jobs:
+      - aws-ecr/build_and_push_image:
+          account-url: 827031902916.dkr.ecr.ap-northeast-2.amazonaws.com/blog/nuxt
+          aws-access-key-id: ACCESS_KEY_ID_ENV_NAME
+          aws-secret-access-key: SECRET_ACCESS_KEY_ENV_NAME
+          context: myContext
+          create-repo: true
+          dockerfile: Dockerfile
+          path: Dockerfile
+          profile-name: myProfileName
+          region: ap-northeast-2
+          repo: blog/nuxt
+          tag: blog

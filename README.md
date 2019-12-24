@@ -1,10 +1,13 @@
+<p style="text-align:center">
+[![CircleCI](https://circleci.com/gh/k22pr/blog-nuxt/tree/master.svg?style=svg)](https://circleci.com/gh/k22pr/blog-nuxt/tree/master)
+</p>
 # blog-nuxt
 
 > Nuxt.js TypeScript project
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 $ npm install # Or yarn install
 
