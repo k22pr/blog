@@ -10,7 +10,7 @@ workflows:
           aws-secret-access-key: SECRET_ACCESS_KEY_ENV_NAME
           create-repo: true
           dockerfile: Dockerfile
-          path: Dockerfile
+          path: ./
           region: AWS_REGION_ENV_NAME
           repo: blog/nuxt
           tag: blog
