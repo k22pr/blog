@@ -25,7 +25,7 @@
         <a-row class="w12" :gutter="24" v-if="postList">
           <post-card v-for="(post, index) in postList" :key="index" :post="post" :loading="false"></post-card>
         </a-row>
-        <a-row class="w12" :gutter="24" v-else>[]
+        <a-row class="w12" :gutter="24" v-else>
           <post-card v-for="(post, index) in 4" :key="index" :loading="true"></post-card>
         </a-row>
       </div>

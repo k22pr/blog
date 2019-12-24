@@ -18,6 +18,7 @@ export interface IPost {
   category: any;
   title: string;
   content: string;
+  description: string;
   logo: IImage;
   banner: IImage;
   created_at: string;

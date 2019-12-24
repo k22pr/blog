@@ -18,6 +18,7 @@
         <!-- <a-skeleton avatar active :paragraph="{ rows: 0 }" :loading="!postData"> <i class="fal fa-brackets-curly"></i> {{ postData.title }} </a-skeleton> -->
         <!-- <a-skeleton avatar active :paragraph="{ rows: 0 }" :loading="!postData"> <i class="fal fa-brackets-curly"></i> {{ postData.title }} </a-skeleton> -->
       </div>
+      <div class="w12 description" v-if="postData" v-html="getDescription"></div>
       <div class="w12 sub-title">
         <!-- {{ post.category }} -->
       </div>
@@ -72,6 +73,10 @@ export default class PostView extends Vue {
     return this.getScroll < bodySize ? { top: this.getScroll / 1.5 + "px" } : { top: this.getScroll + "px" };
   }
 
+  get getDescription() {
+    return this.postData!.description.replace(/(\n|\r\n)/g, "<br>");
+  }
+
   public created() {
     this.setScrollValue(0);
     this.index = Number(this.$route.params.index);
@@ -94,6 +99,7 @@ export default class PostView extends Vue {
             id
             title
             content
+            description
             category {
               name
             }
