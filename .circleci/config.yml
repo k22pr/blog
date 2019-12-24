@@ -8,7 +8,7 @@ workflows:
           account-url: AWS_ECR_ACCOUNT_URL_ENV_NAME
           aws-access-key-id: ACCESS_KEY_ID_ENV_NAME
           aws-secret-access-key: SECRET_ACCESS_KEY_ENV_NAME
-          context: ./
+          context: blog-nuxt
           create-repo: true
           dockerfile: Dockerfile
           path: Dockerfile
