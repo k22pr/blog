@@ -43,5 +43,5 @@ jobs:
       - run:
           name: Deploy Over SSH
           command: |
-            ssh root@some.is -o StrictHostKeyChecking=no "~/blog-nuxt/deploy.sh"
+            ssh root@some.is -o StrictHostKeyChecking=no "git pull && docker-compose up -d --build"
       # - run: yarn start
