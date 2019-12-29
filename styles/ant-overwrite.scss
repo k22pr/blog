@@ -1,5 +1,9 @@
 $skeleton-color: rgba(225, 225, 225, 0.2);
 
+.ant-row {
+  margin-left: 0px !important;
+}
+
 .ant-skeleton-header .ant-skeleton-avatar {
   background: $skeleton-color;
 }
